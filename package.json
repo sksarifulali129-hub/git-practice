@@ -1,7 +1,7 @@
 {
   "name": "git-practice",
   "version": "1.0.0",
-  "description": "",
+  "description": "In this project I am learning about NPM , Package.json , also testing git and github",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
