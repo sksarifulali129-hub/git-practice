@@ -38,6 +38,11 @@ app.get("/ebooks/:id/:category/:name" , (req,res) => {
 app.get("/search" , (req,res) => {
     res.send("your ordered book is : " +" " +req.query.book);
 });
+app.use((req,res,next) => {
+    console.log("A request has arrived");
+    next();
+}
+);
 app.get("/find", (req,res) => {
     res.send("Your book name is: " + " " + req.query.book +" and id is:" + " " + req.query.id);
 });
