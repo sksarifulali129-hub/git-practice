@@ -35,4 +35,10 @@ app.get("/developers/:category/:id", (req,res) => {
 app.get("/ebooks/:id/:category/:name" , (req,res) => {
     res.send(req.params.id + req.params.category + req.params.name);
 });
+app.get("/search" , (req,res) => {
+    res.send("your ordered book is : " +" " +req.query.book);
+});
+app.get("/find", (req,res) => {
+    res.send("Your book name is: " + " " + req.query.book +" and id is:" + " " + req.query.id);
+});
 app.listen(3000); 
