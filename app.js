@@ -3,7 +3,7 @@ console.log("testing nodemon");*/
 
 const express = require("express");
 const app = express();
-app.get("/", (req,res) => {
+/*app.get("/", (req,res) => {
     res.send("hello") 
 }
 )
@@ -42,7 +42,7 @@ app.get("/search" , (req,res) => {
     console.log("A request has arrived");
     next();
 }
-);*/
+);
 app.get("/find", (req,res) => {
     res.send("Your book name is: " + " " + req.query.book +" and id is:" + " " + req.query.id);
 });
@@ -55,6 +55,26 @@ function admdfhf (req,res,next) {
 app.get("/admins", admdfhf, (req,res) => {
 res.send("Welcome to Admin Page");
 }
+);*/
+app.use(express.json());
+const books = [
+    {bookid:1, bookname:"nodejs"},
+    {bookid:2, bookname:"expressjs"}
+] ;
+app.get("/books", (req,res) => {
+res.json(books);
+}
 );
+app.post("/postbook", (req,res) => {
+    const newbook = {
+        bookid:books.length + 1, 
+        bookname: req.body.name
+    };
+books.push(newbook);
+    
+    res.json({
+       message:"Book Added Successfully",
+       book:newbook 
+    });
+});
 app.listen(3000);
-console.log("app");
