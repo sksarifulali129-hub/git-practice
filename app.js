@@ -1,7 +1,7 @@
 /*console.log("hello world , howare you, nodemon");
 console.log("testing nodemon");*/
 
-const express = require("express");
+/*const express = require("express");
 const app = express();
 /*app.get("/", (req,res) => {
     res.send("hello") 
@@ -55,7 +55,7 @@ function admdfhf (req,res,next) {
 app.get("/admins", admdfhf, (req,res) => {
 res.send("Welcome to Admin Page");
 }
-);*/
+);
 app.use(express.json());
 const books = [
     {bookid:1, bookname:"nodejs"},
@@ -77,4 +77,4 @@ books.push(newbook);
        book:newbook 
     });
 });
-app.listen(3000);
+app.listen(3000);*/
