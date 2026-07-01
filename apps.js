@@ -30,6 +30,9 @@ async function uploadJSON() {
 
 uploadJSON();*/
 const mongoose = require("mongoose");
+const express = require("express");
+application = express();
+
 mongoose.connect("mongodb://sksarifulali129_db_user:Mon85%40%40**@ac-yakuung-shard-00-00.u8hrk8d.mongodb.net:27017,ac-yakuung-shard-00-01.u8hrk8d.mongodb.net:27017,ac-yakuung-shard-00-02.u8hrk8d.mongodb.net:27017/mockaro?ssl=true&replicaSet=atlas-pfmfuu-shard-0&authSource=admin&appName=Cluster0")
 .then(() => {
     console.log("MongoDB connected successfully");
@@ -37,4 +40,22 @@ mongoose.connect("mongodb://sksarifulali129_db_user:Mon85%40%40**@ac-yakuung-sha
 .catch((err) => {
     console.log(err);
 });
+const UserSchema = new mongoose.Schema({
+id:Number,
+first_name:String,
+last_name:String,
+email:String,
+gender:String
+});
+const UserModel = mongoose.model("mongmdl",UserSchema,"user");
+application.get("/" , (req,res) => {
+UserModel.find()
+.then((result) => {
+    res.send(result);
+})
+.catch((err) => {
+    res.send(err);
+})
+});
+application.listen(3000);
 
