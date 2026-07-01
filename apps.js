@@ -1,4 +1,4 @@
-const { MongoClient } = require("mongodb");
+/*const { MongoClient } = require("mongodb");
 const fs = require("fs");
 
 const uri = "mongodb://sksarifulali129_db_user:Mon85%40%40**@ac-yakuung-shard-00-00.u8hrk8d.mongodb.net:27017,ac-yakuung-shard-00-01.u8hrk8d.mongodb.net:27017,ac-yakuung-shard-00-02.u8hrk8d.mongodb.net:27017/?ssl=true&replicaSet=atlas-pfmfuu-shard-0&authSource=admin&appName=Cluster0";
@@ -28,5 +28,13 @@ async function uploadJSON() {
     }
 }
 
-uploadJSON();
+uploadJSON();*/
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://sksarifulali129_db_user:Mon85%40%40**@ac-yakuung-shard-00-00.u8hrk8d.mongodb.net:27017,ac-yakuung-shard-00-01.u8hrk8d.mongodb.net:27017,ac-yakuung-shard-00-02.u8hrk8d.mongodb.net:27017/mockaro?ssl=true&replicaSet=atlas-pfmfuu-shard-0&authSource=admin&appName=Cluster0")
+.then(() => {
+    console.log("MongoDB connected successfully");
+})
+.catch((err) => {
+    console.log(err);
+});
 
